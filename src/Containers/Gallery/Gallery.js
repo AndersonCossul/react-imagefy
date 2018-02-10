@@ -10,7 +10,7 @@ class Videos extends Component {
   }
 
   getImages () {
-    axios.get('https://res.cloudinary.com/dl3e0kbis/image/list/imagefy.json')
+    axios.get('http://res.cloudinary.com/dl3e0kbis/image/list/imagefy.json')
     .then(res => {
       this.setState({images: res.data.resources});
     })
@@ -35,7 +35,7 @@ class Videos extends Component {
         images = <Images images={this.state.images}/>
       } else {
         images = (
-          <div>
+          <div className="mt-5">
             <p className="text-muted">No images were found.</p>
             <Link to="/upload">Upload new image</Link>
           </div>
