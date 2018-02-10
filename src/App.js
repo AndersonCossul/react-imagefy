@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
-import Nav from './Components/Nav'
+import NavBar from './Components/Navigation/NavBar/NavBar'
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import Videos from './Containers/Videos'
-import Upload from './Containers/Upload'
+import Gallery from './Containers/Gallery/Gallery'
+import Upload from './Containers/Upload/Upload'
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="container">
-          <Nav />
+          <NavBar />
           <hr />
           <Switch>
-            <Route path="/" exact component={Videos} />
+            <Route path="/" exact component={Gallery} />
             <Redirect from="/videos" to="/" />
             <Redirect from="/all-videos" to="/" />
 

@@ -4,7 +4,7 @@ class Videos extends Component {
   render () {
     return (
       <div>
-        <h1 className="text-center">Latest Videos</h1>
+        <h1 className="text-center">Latest Uploads</h1>
         <div className="col-sm-12">
         </div>
       </div>
