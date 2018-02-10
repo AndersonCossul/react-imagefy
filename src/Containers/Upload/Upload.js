@@ -4,11 +4,17 @@ class Upload extends Component {
   uploadWidget = () => {
     window.cloudinary.openUploadWidget(
       {
-        cloud_name: 'react-minivimeo',
-        upload_preset: 'dl3e0kbis',
-        tags: ['react-minivimeo'],
+        cloud_name: 'dl3e0kbis',
+        upload_preset: 'imagefy',
+        tags: ['imagefy'],
         sources: ['local', 'url', 'google_photos', 'facebook']
-      }
+      }, ((error, result) => {
+        if (error) {
+          alert('An error happened!')
+        } else {
+          this.props.history.push('/')
+        }
+      })
     )
   }
 
