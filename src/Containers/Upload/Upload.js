@@ -1,7 +1,13 @@
 import React, {Component} from 'react'
 
 class Upload extends Component {
+  state = {
+    isModalLoading: false
+  }
+
   uploadWidget = () => {
+    this.setState({isModalLoading: true})
+
     window.cloudinary.openUploadWidget(
       {
         cloud_name: 'dl3e0kbis',
@@ -9,10 +15,10 @@ class Upload extends Component {
         tags: ['imagefy'],
         sources: ['local', 'url', 'google_photos', 'facebook']
       }, ((error, result) => {
-        if (error) {
-          alert('An error happened!')
-        } else {
+        if (result) {
           this.props.history.push('/')
+        } else {
+          this.setState({isModalLoading: false})
         }
       })
     )
@@ -28,7 +34,10 @@ class Upload extends Component {
 
         <div className="col-sm-12">
           <div className="jumbotron text-center">
-            <button className="btn btn-lg btn-info" onClick={this.uploadWidget}>
+            <button
+              className="btn btn-lg btn-info"
+              onClick={this.uploadWidget}
+              disabled={this.state.isModalLoading}>
               Upload Image
             </button>
           </div>

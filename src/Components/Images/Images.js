@@ -8,7 +8,7 @@ const images = (props) => {
       {
         props.images.map((image, index) => {
           return (
-            <div className="col-sm-3" key={index}>
+            <div className="col-sm-3 mt-2" key={index}>
               <Image
                 className="image"
                 publicId={image.public_id}
