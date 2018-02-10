@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
-import './App.css'
+import Nav from './Components/Nav'
+import { BrowserRouter } from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <h1>React MiniVimeo</h1>
+      <BrowserRouter>
+        <div className="container">
+          <Nav />
+          <hr />
+        </div>
+      </BrowserRouter>
     )
   }
 }
